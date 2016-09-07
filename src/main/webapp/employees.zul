@@ -1,0 +1,24 @@
+<zk>
+    <window title="Employees" border="normal" width="60%"
+    apply="test.controller.EmployeeController">
+        <hbox align="center">
+            Keyword:
+            <textbox id="keyWordBox" />
+            <button id="searchButton" label="Search" image="/img/search.png" />
+        </hbox>
+        <listbox id="employeeListBox" height="100px" emptyMessage="No found">
+            <listhead>
+                <listheader label="Name"/>
+                <listheader label="Years"/>
+                <listheader label="Salary" width="20%"/>
+            </listhead>
+            <template name="model">
+                <listitem >
+                    <listcell label="${each.name}"/>
+                    <listcell label="${each.year}"/>
+                    <listcell>$<label value="${each.salary}"/></listcell>
+                </listitem>
+            </template>
+        </listbox>
+    </window>
+</zk>
